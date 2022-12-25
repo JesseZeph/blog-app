@@ -132,11 +132,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-ALLOWED_HOSTS = ['.herokuapp.com'
+ALLOWED_HOSTS = ['web-production-acdb.up.railway.app', '.herokuapp.com'
 ,
 'localhost'
 ,
 '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = ['https://web-production-acdb.up.railway.app']
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
